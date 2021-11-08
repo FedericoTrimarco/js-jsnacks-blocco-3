@@ -22,16 +22,43 @@
 const player = {
     firstName : 'Federico',
     lastName : 'Trimarco',
-    age : '23',
+    id : makeId(3),
+    age : 23,
     pointsForMatch : randomNumber(0, 50),
     percenThreePoint : randomNumber(0, 100),
 };
 console.log(player);
 
+const {firstName, lastName, age, id} = player;
+console.log(firstName, lastName, age, id);
+
+
+
+
+
+
+
+
 
 /******************
  F U N Z I O N I
 ******************/
+
 function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
   }
+
+// generate ID
+function makeId(length) {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const numbers = '0123456789';
+    let resultChar = '';
+    let resultNumber = '';
+    for ( let i = 0; i < length; i++ ) {
+      resultChar += characters.charAt(Math.floor(Math.random() * characters.length));
+      resultNumber += numbers.charAt(Math.floor(Math.random() * numbers.length));
+    }
+    return resultChar + resultNumber;
+}
+
+
