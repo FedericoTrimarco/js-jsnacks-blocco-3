@@ -13,8 +13,25 @@
     - la percentuale di successo per tiri da 3 punti deve essere compresa tra 0 e 100
 
     3. Stampare Nome, cognome, età e codice giocatore.
-    
+
     4. Creare un array di 10 giocatori di basket, con le regole sopra indicate
-    
+
     5. Creare un nuovo array con i giocatori che hanno una media di punti superiore a 35 e la percentuale di successo per i tiri da 3 punti superiore all’80%.
 */
+
+const player = {
+    firstName : 'Federico',
+    lastName : 'Trimarco',
+    age : '23',
+    pointsForMatch : randomNumber(0, 50),
+    percenThreePoint : randomNumber(0, 100),
+};
+console.log(player);
+
+
+/******************
+ F U N Z I O N I
+******************/
+function randomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+  }
