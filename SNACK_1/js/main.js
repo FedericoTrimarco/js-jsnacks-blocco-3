@@ -18,8 +18,11 @@
 
     5. Creare un nuovo array con i giocatori che hanno una media di punti superiore a 35 e la percentuale di successo per i tiri da 3 punti superiore all’80%.
 */
+const FirstName = ['Luca','Federico','Giulio','Francesco','Giulia','Simona','Lello','Ugo','Patrizia','Giuseppe']
+const LastName = ['Trimarco','Salvat','Esposito','Abet','De Santis','Zinno','Wayne','Grosso','Di Giacomo','De Stasio']
 
-const player = {
+// giocatore singolo
+let player = {
     firstName : 'Federico',
     lastName : 'Trimarco',
     id : makeId(3),
@@ -29,12 +32,17 @@ const player = {
 };
 console.log(player);
 
+// destrutturazione player
 const {firstName, lastName, age, id} = player;
 console.log(firstName, lastName, age, id);
 
+// creazione team
+const teamPlayers = randomTeam(FirstName, LastName);
+console.table(teamPlayers);
 
-
-
+// Creazione del nuovo array con i giocatori che hanno una media di punti superiore a 35 e la percentuale di successo per i tiri da 3 punti superiore all’80%.
+const newTeam = teamPlayers.filter ( element => (element.pointsForMatch > 35 && element.percenThreePoint > 30));
+console.table(newTeam);
 
 
 
@@ -61,4 +69,26 @@ function makeId(length) {
     return resultChar + resultNumber;
 }
 
+// gen random team
+function randomTeam(arrayName, arrayLastName){
+    const team = [];
+    for(let i = 0; i < 10; i++){
+        const players = {
+            firstName : randomName(arrayName),
+            lastName : randomName(arrayLastName),
+            id : makeId(3),
+            age : randomNumber(18, 50),
+            pointsForMatch : randomNumber(0, 50),
+            percenThreePoint : randomNumber(0, 100),
+        };
+        team.push(players);
+    }
+    return team;
+}
+
+// gen random name & last-name
+function randomName(array) {
+    const randomTeam = array[Math.floor(Math.random() * array.length)];
+    return randomTeam;
+};
 
