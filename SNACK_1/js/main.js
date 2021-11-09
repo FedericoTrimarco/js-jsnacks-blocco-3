@@ -41,7 +41,7 @@ const teamPlayers = randomTeam(FirstName, LastName);
 console.table(teamPlayers);
 
 // Creazione del nuovo array con i giocatori che hanno una media di punti superiore a 35 e la percentuale di successo per i tiri da 3 punti superiore all’80%.
-const newTeam = teamPlayers.filter ( element => (element.pointsForMatch > 35 && element.percenThreePoint > 30));
+const newTeam = teamPlayers.filter ( element => element.pointsForMatch > 35 && element.percenThreePoint > 30 );
 console.table(newTeam);
 
 
