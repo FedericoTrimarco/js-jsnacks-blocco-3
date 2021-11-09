@@ -59,12 +59,11 @@ function randomNumber(min, max) {
 // generate ID
 function makeId(length) {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    const numbers = '0123456789';
     let resultChar = '';
     let resultNumber = '';
     for ( let i = 0; i < length; i++ ) {
-      resultChar += characters.charAt(Math.floor(Math.random() * characters.length));
-      resultNumber += numbers.charAt(Math.floor(Math.random() * numbers.length));
+      resultChar += characters.charAt(randomNumber(0, characters.length - 1));
+      resultNumber += randomNumber(0, 9);
     }
     return resultChar + resultNumber;
 }
