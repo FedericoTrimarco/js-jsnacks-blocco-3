@@ -87,7 +87,6 @@ function randomTeam(arrayName, arrayLastName){
 
 // gen random name & last-name
 function randomName(array) {
-    const randomTeam = array[Math.floor(Math.random() * array.length)];
-    return randomTeam;
+    return array[Math.floor(Math.random() * array.length)];
 };
 
